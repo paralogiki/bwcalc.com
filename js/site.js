@@ -6,7 +6,7 @@ $(document).ready(function(){
   $('.navbar-brand').click(function () {
     $('.collapse').collapse('hide');
   });
- $('.btn-do-calc').click(function (e) {
+  $('.btn-do-calc').click(function (e) {
     e.preventDefault();
     doCalc();
     $('#link-bwcalc').click();
@@ -60,7 +60,7 @@ function doCalc() {
   });
   var devices = $('#numDevices').val();
   if ($.isNumeric(devices)) {
-    bw += devices * 0.05;
+    bw += devices * 0.01;
   }
   $('#bandwidthRequired').html(bw.toFixed(2));
 }
@@ -98,8 +98,7 @@ function addActivity(cost_code, cost_cost, cost_activity) {
   newId = maxId + 1;
   template='<div class="an_activity">' +
     '  <p style="display: none;"><span class="activity_cost">' + cost_cost + '</span></p>' +
-    '  <p>Selected: ' + cost_code + ' ' + cost_cost + ' ' + cost_activity + '</p>' +
-    '  <p><a href="#" class="btn btn-danger btn-xs btn-removeActivity"><i class="fa fa-remove"></i> Remove</a></p>' +
+    '  <p><button class="btn btn-danger btn-xs btn-removeActivity"><i class="fa fa-remove"></i></button> Selected: ' + cost_code + ' ' + cost_cost + ' ' + cost_activity + '</p>' +
     '</div>';
   $('#container-addActivity').before(template);
   doCalc();
@@ -160,13 +159,13 @@ var bwActivities = [
       {
         name: 'Normal',
         description: 'Most multi-player game uses the same amount of average bandwidth, in most cases pick this option.',
-        cost: 0.5
+        cost: 0.025
       },
       high:
       {
         name: 'High',
         description: 'For some reason if you think the bandwidth usage on a game is high, pick this option, 3 time the Normal amount.',
-        cost: 1.5
+        cost: 0.075
       }
     }
   },
@@ -285,11 +284,12 @@ function fillActivityList() {
     template = '<p><strong>' + activity.name + ':</strong> ' + activity.description + '</p>';
     for (var costcode in activity.costs) {
       cost = activity.costs[costcode];
-      template += '<p><strong>' + cost.name + ':</strong> ' + cost.description + ' <a href="#" class="btn btn-success btn-xs selectActivity" data-code="' + costcode + '" data-cost="' + cost.cost +'" data-activity="' + activity.code +'"><i class="fa fa-plus"></i> Select</a></p>';
+      template += '<p><button class="btn btn-success btn-xs selectActivity" data-code="' + costcode + '" data-cost="' + cost.cost +'" data-activity="' + activity.code + '"><i class="fa fa-plus"></i> ' + cost.name + '</button> <button type="button" class="btn btn-default btn-xs en-pop" data-toggle="popover" data-placement="top" title="' + cost.name + '" data-content="' + cost.description + '"><i class="fa fa-question"></i></button></p>';
     }
     template += '<hr>';
     $('#container-activityList').append(template);
   }
+  $('.en-pop').popover();
 }
 
 //console.log(bwActivities);
