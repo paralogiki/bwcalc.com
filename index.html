@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Bandwidth Calculator | How much do I need?</title>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link href="/css/scrolling-nav.css" rel="stylesheet">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top" id="link-bwcalc">Bandwidth Calculator</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#disclaimer">Disclaimer</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="a-section a-section-odd">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+<h1>Bandwidth Calculator</h1>
+<p><strong>Usage Instructions:</strong> Select your household's simultaneous Internet usage, the calculator will update upon each selection. Make sure to add multiples of the same activity. If you constantly have two people watching NetFlix, select Video Streaming twice.</p>
+<p><strong>Important</strong> Make sure you select activities for simultaneous usage. You probably do several of these activities throughout the day, but when measuring bandwidth it is about simultaneous usage.</p>
+<div class="row">
+  <div class="col-lg-6">
+    <form role="form" id="bwcalc">
+      <p><strong>Activities</strong></p>
+      <div class="form-group" id="container-addActivity">
+        <a class="btn btn-success btn-sm" href="#" id="btn-addActivity"><i class="fa fa-tasks"></i> Add an activity</a>
+        <a class="btn btn-danger btn-sm" href="#" id="btn-hideActivityList" style="display: none;"><i class="fa fa-remove"></i> Hide activity list</a>
+      </div>
+      <div id="container-activityList" style="display: none;">
+      </div>
+      <div class="form-group" id="numDevices-container">
+        <label for="numDevices">Number of Internet enabled devices</label>
+        <input type="integer" class="form-control" id="numDevices" placeholder="Number of Internet enabled devices">
+        <span class="help-block">Each Internet connected device will use a small amount of bandwidth in it's normal operations. Include anything that connects to your Internet including gaming consoles (XBox, PlayStation, Wii), desktops, laptops, cell phones, refrigerators, toasters...</span>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-do-calc"><i class="fa fa-calculator"></i> Calculate</button>
+    </form>
+  </div>
+  <div class="col-lg-6">
+    <p><strong>Estimated Bandwidth Required:</strong></p>
+    <h2><span id="bandwidthRequired">0.00</span> <small>Megabits per second</small></h2>
+    <p><strong>Estimated Monthly Usage:</strong></p>
+    <h2><span id="bandwidthUsed">0.00</span> <small>Gigabits</small></h2>
+  </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="a-section a-section-even">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+<h1>About</h1>
+                    <p>The purpose of this calculator is to help you make informed purchasing decisions with your internet plans. Internet Providers love to sell you things to don't need. And a very high percentage of their customers do not need 102 Megabits per second. Try out the calculator, we tried to make it as full of options as we could to help you make a more informed decision.</p>
+                    <p><strong>Important</strong> Make sure you do simultaneous usage. You probably do several of these activities through the day, but when measuring bandwidth it is about simultaneous usage.</p>
+                    <p>We believe that the cable industry, especially in the United States, is convincing their customers that they need more speed. We're trying to help you save money.</p>
+                    <p>We weclome suggestions and improvements, our site is up on Github and we will take pull requests for improvments and fixes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Disclaimer Section -->
+    <section id="disclaimer" class="a-section a-section-odd">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+<h1>Disclaimer</h1>
+                    <p>We are striving for accuracy on our calculator, but the totals you get may not reflect how much bandwidth you need or use in a given month. All values are our best estimates of usage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section id="footer" class="a-section a-section-even">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+<p class="text-center mb0">
+  <a href="https://github.com/paralogiki/bwcalc.com" target="_blank">GitHub</a>
+  |
+  <a href="http://paralogiktech.com" target="_blank">Paralogik Tech.</a>
+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="/js/jquery.easing.min.js"></script>
+<script src="/js/scrolling-nav.js"></script>
+<script src="/js/site.js"></script>
+
+</body>
+
+</html>
